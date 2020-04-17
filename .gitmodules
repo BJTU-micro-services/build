@@ -1,0 +1,12 @@
+[submodule "apps/api"]
+	path = apps/api
+	url = https://github.com/BJTU-micro-services/api.git
+[submodule "apps/services/payment"]
+	path = apps/services/payment
+	url = https://github.com/BJTU-micro-services/payment.git
+[submodule "apps/services/ticket"]
+	path = apps/services/ticket
+	url = https://github.com/BJTU-micro-services/ticket.git
+[submodule "apps/services/user"]
+	path = apps/services/user
+	url = https://github.com/BJTU-micro-services/user.git
