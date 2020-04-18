@@ -9,4 +9,4 @@
 	url = git@github.com:BJTU-micro-services/ticket.git
 [submodule "apps/services/user"]
 	path = apps/services/user
-	url = git@github.com:BJTU-micro-services/ticket.git
+	url = git@github.com:BJTU-micro-services/user.git
