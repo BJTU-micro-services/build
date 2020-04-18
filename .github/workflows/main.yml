@@ -37,7 +37,7 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
         key: ${{ secrets.KEY }}
-        command_timeout: 2m
+        command_timeout: 5m
         script: |
           git clone --recursive git@github.com:BJTU-micro-services/build.git
           cd build
