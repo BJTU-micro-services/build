@@ -4,7 +4,7 @@
 - [Usage](#zap-usage)
 - [Development](#wrench-development)
   - [Pre-Requisites](#notebook-pre-requisites)
-  - [Developmen Environment](#nut_and_bolt-development-environment)
+  - [Development Environment](#nut_and_bolt-development-environment)
   - [Build](#hammer-build)  
 
 ##  :beginner: About
