@@ -37,7 +37,8 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
         key: ${{ secrets.KEY }}
+        command_timeout: 2m
         script: |
-          git clone git@github.com:BJTU-micro-services/build.git
+          git clone --recursive git@github.com:BJTU-micro-services/build.git
           cd build
           docker-compose up -d
