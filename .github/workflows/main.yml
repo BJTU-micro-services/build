@@ -34,4 +34,4 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
         key: ${{ secrets.KEY }}
-        script: docker-compose up -d
+        script: git clone git@github.com:BJTU-micro-services/build.git && cd build && docker-compose up -d
