@@ -5,7 +5,7 @@
 - [Development](#wrench-development)
   - [Pre-Requisites](#notebook-pre-requisites)
   - [Development Environment](#nut_and_bolt-development-environment)
-  - [Build](#hammer-build)  
+  - [Build](#hammer-build)
 
 ##  :beginner: About
 
@@ -45,4 +45,5 @@ git pull
 
 ###  :hammer: Build
 
-`docker-compose up`
+- `docker-compose -f docker-compose-kafka.yml up -d`
+- `docker-compose up`
