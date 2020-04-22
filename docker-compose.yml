@@ -1,6 +1,10 @@
 version: "3"
 services:
 
+  redis:
+    image: redis:latest
+    container_name: redis
+
   api:
     build: ./apps/api
     container_name: api
@@ -9,6 +13,8 @@ services:
     command: sh -c "dockerize -wait tcp://localhost:2181 -wait tcp://localhost:9092 npm start"
     ports:
       - "3000:3000"
+    depends_on:
+      - redis
 
   payment:
     build: ./apps/services/payment
