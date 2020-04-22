@@ -1,0 +1,42 @@
+version: "3"
+services:
+
+  redis:
+    image: redis:latest
+    container_name: redis
+    network_mode: host
+#    ports:
+#      - "6379:6379"
+
+  api:
+    build: ./apps/api
+    container_name: api
+    network_mode: host
+    working_dir: /app
+    command: sh -c "dockerize -wait tcp://localhost:2181 -wait tcp://localhost:9092 npm test"
+    depends_on:
+      - redis
+
+#  payment:
+#    build: ./apps/services/payment
+#    container_name: payment
+#    network_mode: host
+#    depends_on:
+#      - api
+#    command: sh -c "dockerize -wait tcp://localhost:2181 -wait tcp://localhost:9092 npm start"
+#
+#  ticket:
+#    build: ./apps/services/ticket
+#    container_name: ticket
+#    network_mode: host
+#    depends_on:
+#      - api
+#    command: sh -c "dockerize -wait tcp://localhost:2181 -wait tcp://localhost:9092 npm start"
+#
+#  user:
+#    build: ./apps/services/user
+#    container_name: user
+#    network_mode: host
+#    depends_on:
+#      - api
+#    command: sh -c "dockerize -wait tcp://localhost:2181 -wait tcp://localhost:9092 npm start"
