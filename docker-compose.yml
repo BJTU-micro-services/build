@@ -5,8 +5,6 @@ services:
     image: redis:latest
     container_name: redis
     network_mode: host
-#    ports:
-#      - "6379:6379"
 
   api:
     build: ./apps/api
@@ -25,7 +23,7 @@ services:
     network_mode: host
     depends_on:
       - api
-    command: sh -c "dockerize -wait tcp://localhost:2181 -wait tcp://localhost:9092 npm start"
+    command: sh -c "dockerize -wait tcp://localhost:2181 -wait tcp://localhost:9092 -wait tcp://localhost:6379  npm start"
 
   ticket:
     build: ./apps/services/ticket
@@ -33,7 +31,7 @@ services:
     network_mode: host
     depends_on:
       - api
-    command: sh -c "dockerize -wait tcp://localhost:2181 -wait tcp://localhost:9092 npm start"
+    command: sh -c "dockerize -wait tcp://localhost:2181 -wait tcp://localhost:9092 -wait tcp://localhost:6379 npm start"
 
   user:
     build: ./apps/services/user
@@ -41,4 +39,4 @@ services:
     network_mode: host
     depends_on:
       - api
-    command: sh -c "dockerize -wait tcp://localhost:2181 -wait tcp://localhost:9092 npm start"
+    command: sh -c "dockerize -wait tcp://localhost:2181 -wait tcp://localhost:9092 -wait tcp://localhost:6379  npm start"

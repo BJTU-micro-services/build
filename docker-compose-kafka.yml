@@ -17,6 +17,6 @@ services:
     environment:
       KAFKA_ADVERTISED_HOST_NAME: localhost
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-      KAFKA_CREATE_TOPICS: "test_topic:1:1"
+      KAFKA_CREATE_TOPICS: "payment_successful:1:1,list_tickets:1:1,order_ticket:1:1,payment:1:1,new_order:1:1,create_user:1:1"
     ports:
       - "9092:9092"
